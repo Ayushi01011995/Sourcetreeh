@@ -1,0 +1,15 @@
+<apex:page controller="actionFunctionController" tabStyle="Account">
+    <apex:form >
+        <apex:actionFunction name="priorityChangedJavaScript" action="{!priorityChanged}" rerender="asdfg"/>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="If you will select Industry then phone textbox will be shown" columns="1">
+            
+                <apex:inputField value="{!acc.Industry }" onchange="priorityChangedJavaScript()"/>
+                <apex:outputPanel id="asdfg">
+                
+                <apex:inputField value="{!acc.Phone}" rendered="{!showPhone}"/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
